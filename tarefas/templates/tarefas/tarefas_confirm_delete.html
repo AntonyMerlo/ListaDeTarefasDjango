@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+{% block page_title %}
+    LT - Excluir
+{% endblock page_title%}
+
+{% block content %}
+    <h1>Excluir Tarefa</h1>
+
+    <p>Confirma que deseja escluir a tarefa <strong>"{{tarefas.nomeTarefa}}"</strong>? </p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Sim</button>
+        <a href="{% url 'tarefas_list' %}" class="btn btn-secondary">Não</a>
+    </form>
+{% endblock content%}
