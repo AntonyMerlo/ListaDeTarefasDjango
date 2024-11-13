@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-$v3w61p6bh_r2jri$kx9ukh16x_1k=#2y#)!kuf^u8p(m56ahw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -80,7 +80,8 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('POSTGRES_URL'))
+    'default': dj_database_url.config(
+        default="postgres://default:EafG6kCR7xyU@ep-delicate-sun-a1w3p5ts.ap-southeast-1.aws.neon.tech:5432/verceldb?sslmode=require")
 }
 
 
