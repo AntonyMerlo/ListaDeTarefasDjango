@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, View
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404, redirect
@@ -33,7 +32,7 @@ class TarefasDeleteView(DeleteView):
 class TarefasCompletarTarefaView(View):
     def get(self, request, pk):
         tarefa = get_object_or_404(Tarefas, pk=pk)
-        tarefa.ordemDeApresentacao = NULL
+        tarefa.ordemDeApresentacao = None
         tarefa.save()
         return redirect('tarefas_list')
 
